@@ -1,0 +1,19 @@
+<h1>Custom Component Text</h1>
+<p>First Name : ${properties.firstName}</p>
+<p>Last Name : ${properties.lastName}</p>
+<p> Is Professor : ${properties.professor}</p>
+
+<div data-sly-use.model="com.aem.geeks.core.models.MyModel">
+    <p>First Name : ${model.firstName}</p>
+    <p>Last Name : ${model.lastName}</p>
+    <p> Is Professor : ${model.isProfessor}</p>
+    <p> Page Title: ${model.pageTitle}</p>
+    <p> Resource Resolver: ${model.resourceResolver}</p>
+    <p> Sling Http Servlet: ${model.slingHttpServlet}</p>
+    <p> Sling reqAttribute: ${model.reqAttribute}</p>
+    <div data-sly-list.item="${model.authorBooks}">
+        ------------------------Book : ${itemList.count}------------------------
+        <p> Book : <b>${item}</b></p>
+    </div>
+    <p> ALL Books : <b> ${model.authorBooks @ join=', '}</b></p>
+</div>
